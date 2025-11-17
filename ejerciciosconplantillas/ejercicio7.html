@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flores — Tipos y características</title>
+<meta name="description" content="Página sobre distintos tipos de flores: rosas, tulipanes, girasoles, orquídeas y lirios. Imágenes y explicaciones." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#fffaf6;
+--card:#ffffff;
+--accent:#2b8a6b;
+--muted:#6b6b6b;
+--glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,var(--bg),#f7f9fb); color:#1a1a1a;}
+.container{max-width:1100px; margin:36px auto; padding:24px}
+header{display:flex;gap:18px;align-items:center}
+.logo{display:flex;flex-direction:column;align-items:flex-start}
+h1{font-family:'Playfair Display', serif; font-size:2.2rem; margin:0}
+p.lead{margin:8px 0 0;color:var(--muted)}
+
+
+.hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:22px;align-items:center}
+.hero-card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(20,20,30,0.06)}
+.hero img{width:100%;height:280px;object-fit:cover;border-radius:12px}
+.hero .text{padding:6px 0}
+
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+.flower{background:var(--card);border-radius:12px;padding:14px;overflow:hidden;box-shadow:0 6px 18px rgba(20,20,30,0.05);display:flex;flex-direction:column}
+.flower img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+.flower h3{margin:12px 0 6px;font-size:1.05rem}
+.flower p{margin:0;color:var(--muted);font-size:0.95rem}
+
+
+footer{margin-top:28px;padding:12px 6px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+
+/* Modal para ampliar imagen */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,12,0.55);z-index:60}
+.modal.show{display:flex}
+.modal img{max-width:92%;max-height:86%;border-radius:8px;box-shadow:0 12px 40px rgba(10,10,20,0.6)}
+
+
+/* responsive */
+@media (max-width:900px){
+.hero{grid-template-columns:1fr}
+.hero img{height:220px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="logo">
+<h1>Flores &amp; Colores</h1>
+<p class="lead">Un paseo visual y textual por los tipos de flores que verás en esta web.</p>
+</div>
+</header>
+
+
+<section class="hero">
+<div class="hero-card">
+<img id="heroImage" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60" alt="Ramo variado de flores" />
+<div class="text">
+<h2 style="margin:10px 0 6px;font-family:'Playfair Display', serif">Acerca de esta página</h2>
+<p style="margin:0;color:var(--muted);line-height:1.45">Aquí encontrarás imágenes y explicaciones sencillas de varios grupos de flores: <strong>rosas, tulipanes, girasoles, orquídeas y lirios</strong>. Haz clic en cualquier imagen para ampliarla.</p>
+</div>
+</div>
+
+
+<aside class="hero-card" aria-label="Datos rápidos">
+<h3 style="margin:0 0 8px">Tipos que verás</h3>
+<ul style="margin:0;padding-left:18px;color:var(--muted)">
+</html>
