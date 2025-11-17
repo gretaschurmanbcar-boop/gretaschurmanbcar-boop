@@ -1,6 +1,6 @@
 <!doctype html>
-
-
+<html lang="es">
+<head>
 <style>
 :root{
 --bg:#fffaf6;
@@ -10,73 +10,156 @@
 --glass: rgba(255,255,255,0.6);
 }
 *{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,var(--bg),#f7f9fb); color:#1a1a1a;}
+body{
+    font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+    margin:0; 
+    background:linear-gradient(180deg,var(--bg),#f7f9fb); 
+    color:#1a1a1a;
+}
 .container{max-width:1100px; margin:36px auto; padding:24px}
 header{display:flex;gap:18px;align-items:center}
 .logo{display:flex;flex-direction:column;align-items:flex-start}
 h1{font-family:'Playfair Display', serif; font-size:2.2rem; margin:0}
 p.lead{margin:8px 0 0;color:var(--muted)}
 
+/* --------------------------------------------------
+   NUEVOS ESTILOS PARA LAS SECCIONES PEDIDAS
+-------------------------------------------------- */
 
-.hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:22px;align-items:center}
-.hero-card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 6px 20px rgba(20,20,30,0.06)}
-.hero img{width:100%;height:280px;object-fit:cover;border-radius:12px}
-.hero .text{padding:6px 0}
+/* SECCIÓN 1: INICIO (estilo suave y limpio) */
+section.inicio{
+    background:#ffffffc9;
+    padding:35px;
+    margin-top:36px;
+    border-radius:18px;
+    box-shadow:0 6px 22px rgba(0,0,0,0.07);
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:28px;
+}
+section.inicio img{
+    width:100%;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.18);
+    border:4px solid #fff;
+    object-fit:cover;
+}
 
+/* SECCIÓN 2: SOBRE MÍ (estilo más contrastado, banda color) */
+section.sobremi{
+    background:linear-gradient(135deg,#f0fcf7,#dff6ed);
+    padding:40px;
+    border-radius:18px;
+    margin-top:36px;
+}
+section.sobremi img{
+    width:100%;
+    max-width:480px;
+    border-radius:18px;
+    border:6px solid #ffffffbb;
+    display:block;
+    margin:18px 0;
+    box-shadow:0 10px 25px rgba(0,0,0,0.14);
+}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
-.flower{background:var(--card);border-radius:12px;padding:14px;overflow:hidden;box-shadow:0 6px 18px rgba(20,20,30,0.05);display:flex;flex-direction:column}
-.flower img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-.flower h3{margin:12px 0 6px;font-size:1.05rem}
-.flower p{margin:0;color:var(--muted);font-size:0.95rem}
+/* SECCIÓN 3: GALERÍA (estilo tarjetas con sombras fuertes) */
+section.galeria{
+    margin-top:40px;
+}
+.galeria-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+}
+.galeria-item{
+    background:#fff;
+    padding:16px;
+    border-radius:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    text-align:center;
+}
+.galeria-item img{
+    width:100%;
+    height:200px;
+    border-radius:12px;
+    object-fit:cover;
+    border:4px solid #ffffff;
+    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+}
 
+/* -------------------------------------------------- */
 
 footer{margin-top:28px;padding:12px 6px;color:var(--muted);font-size:0.9rem;text-align:center}
 
-
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,10,12,0.55);z-index:60}
-.modal.show{display:flex}
-.modal img{max-width:92%;max-height:86%;border-radius:8px;box-shadow:0 12px 40px rgba(10,10,20,0.6)}
-
-
 @media (max-width:900px){
-.hero{grid-template-columns:1fr}
-.hero img{height:220px}
+    section.inicio{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 <div class="container">
+
 <header>
-<div class="logo">
-<h1>Flores & Colores</h1>
-<p class="lead">Un paseo visual y textual por los tipos de flores que verás en esta web.</p>
-</div>
+    <div class="logo">
+        <h1>Flores & Colores</h1>
+        <p class="lead">Un paseo visual por diferentes tipos de flores.</p>
+    </div>
 </header>
 
+<!-- ========================================
+             SECCIÓN 1: INICIO
+========================================= -->
+<section class="inicio">
+    <div>
+        <h2 style="font-family:'Playfair Display', serif">Inicio</h2>
+        <p>
+            Bienvenido a este espacio dedicado a la belleza natural de las flores. 
+            Aquí encontrarás imágenes inspiradoras, explicaciones sencillas y una exploración visual pensada para relajarte y aprender.
+        </p>
+    </div>
 
-<section class="hero">
-<div class="hero-card">
-<img id="heroImage" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60" alt="Ramo variado de flores" />
-<div class="text">
-<h2 style="margin:10px 0 6px;font-family:'Playfair Display', serif">Acerca de esta página</h2>
-<p style="margin:0;color:var(--muted);line-height:1.45">Aquí encontrarás imágenes y explicaciones sencillas de varios grupos de flores: <strong>rosas, tulipanes, girasoles, orquídeas y lirios</strong>. Haz clic en cualquier imagen para ampliarla.</p>
-</div>
-</div>
-
-
-<aside class="hero-card" aria-label="Datos rápidos">
-<h3 style="margin:0 0 8px">Tipos que verás</h3>
-<ul style="margin:0;padding-left:18px;color:var(--muted)">
-<li>Rosas</li>
-<li>Tulipanes</li>
-<li>Girasoles</li>
-<li>Orquídeas</li>
-<li>Lirios</li>
-</ul>
-</aside>
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=60">
 </section>
 
+<!-- ========================================
+             SECCIÓN 2: SOBRE MÍ
+========================================= -->
+<section class="sobremi">
+    <h2 style="font-family:'Playfair Display', serif">Sobre mí</h2>
+    <p>
+        Soy una persona apasionada por el mundo natural, especialmente por las flores y sus formas únicas. 
+        Esta página nació como un proyecto personal para compartir conocimiento y estética visual con quienes disfrutan la naturaleza.
+    </p>
+
+    <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=1200&q=60">
+</section>
+
+<!-- ========================================
+             SECCIÓN 3: GALERÍA
+========================================= -->
+<section class="galeria">
+    <h2 style="font-family:'Playfair Display', serif">Galería</h2>
+    <p>Una pequeña colección de imágenes seleccionadas especialmente para ti.</p>
+
+    <div class="galeria-grid">
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551?auto=format&fit=crop&w=600&q=60">
+            <p>Rosas en primavera</p>
+        </div>
+
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1504197885-609741792ce7?auto=format&fit=crop&w=600&q=60">
+            <p>Tulipanes al amanecer</p>
+        </div>
+
+        <div class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1505482695164-37529f138fbd?auto=format&fit=crop&w=600&q=60">
+            <p>Girasoles en campo abierto</p>
+        </div>
+    </div>
+</section>
+
+<footer>© 2025 Flores & Colores — Inspiración natural</footer>
 
 </div>
 </body>
