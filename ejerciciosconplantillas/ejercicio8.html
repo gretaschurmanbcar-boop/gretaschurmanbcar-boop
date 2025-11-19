@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -8,34 +7,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
-body { line-height: 1.6; color: #333; }
+body { line-height: 1.6; color: #333; position: relative; }
 a { text-decoration: none; color: inherit; }
 
-nav { background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; left: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
+nav { background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; left: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background 0.3s; }
+nav.scrolled { background: rgba(255, 111, 97, 0.95); }
 nav .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
 nav .logo { font-weight: bold; font-size: 1.5rem; color: #ff6f61; }
 nav ul { display: flex; list-style: none; gap: 1.5rem; }
-nav ul li a { padding: 0.5rem 1rem; transition: 0.3s; }
-nav ul li a:hover { background: #ff6f61; color: #fff; border-radius: 5px; }
+nav ul li a { padding: 0.5rem 1rem; transition: 0.3s; border-radius: 5px; }
+nav ul li a:hover { background: #fff; color: #ff6f61; }
 
-header { background: url('[https://images.unsplash.com/photo-1617196033540-9b21d8ef8b35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3JvcXVldGFzfHx8fHx8MTY5NzU1ODU2Nw&ixlib=rb-4.0.3&q=80&w=1920](https://images.unsplash.com/photo-1617196033540-9b21d8ef8b35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3JvcXVldGFzfHx8fHx8MTY5NzU1ODU2Nw&ixlib=rb-4.0.3&q=80&w=1920)') center/cover no-repeat; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; }
+header { background: url('https://images.unsplash.com/photo-1617196033540-9b21d8ef8b35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3JvcXVldGFzfHx8fHx8MTY5NzU1ODU2Nw&ixlib=rb-4.0.3&q=80&w=1920') center/cover no-repeat; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; color: #fff; transition: 0.5s; }
 header h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 6px rgba(0,0,0,0.6); }
 header p { font-size: 1.5rem; margin-bottom: 2rem; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
 header a { background: #ff6f61; color: #fff; padding: 1rem 2rem; border-radius: 5px; font-weight: bold; transition: 0.3s; }
 header a:hover { background: #e65b50; }
 
-section#about { padding: 6rem 2rem; background: #f9f9f9; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
+section { padding: 6rem 2rem; }
+section#about { background: #f9f9f9; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2rem; }
 section#about img { width: 250px; border-radius: 50%; border: 5px solid #ff6f61; }
 section#about .info { max-width: 600px; }
 section#about h2 { font-size: 2rem; margin-bottom: 1rem; color: #ff6f61; }
 section#about p { margin-bottom: 1rem; }
 section#about ul { list-style: disc; margin-left: 1.5rem; }
 
-section#portfolio { padding: 6rem 2rem; }
 section#portfolio h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #ff6f61; }
 .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.project-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
-.project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+.project-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; }
+.project-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 6px 20px rgba(0,0,0,0.2); filter: brightness(1.05); }
 .project-card img { width: 100%; height: 180px; object-fit: cover; }
 .project-card .content { padding: 1rem; }
 .project-card .content h3 { margin-bottom: 0.5rem; color: #ff6f61; }
@@ -43,7 +43,7 @@ section#portfolio h2 { text-align: center; font-size: 2rem; margin-bottom: 3rem;
 .project-card .content a { display: inline-block; background: #ff6f61; color: #fff; padding: 0.5rem 1rem; border-radius: 5px; transition: 0.3s; }
 .project-card .content a:hover { background: #e65b50; }
 
-section#contact { padding: 6rem 2rem; background: #f9f9f9; }
+section#contact { background: #f9f9f9; }
 section#contact h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #ff6f61; }
 .contact-form { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 1rem; }
 .contact-form input, .contact-form textarea { padding: 1rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
@@ -53,14 +53,18 @@ section#contact h2 { text-align: center; font-size: 2rem; margin-bottom: 2rem; c
 footer { background: #333; color: #fff; text-align: center; padding: 2rem; margin-top: 2rem; }
 footer a { color: #ff6f61; margin: 0 0.5rem; }
 
-@media(max-width:768px) { section#about { flex-direction: column; text-align: center; } } </style>
+#back-to-top { position: fixed; bottom: 30px; right: 30px; background: #ff6f61; color: #fff; border: none; padding: 0.75rem 1rem; border-radius: 50%; cursor: pointer; display: none; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.2); transition: 0.3s; }
+#back-to-top:hover { background: #e65b50; }
 
+@media(max-width:768px) { section#about { flex-direction: column; text-align: center; } }
+@media(max-width:480px) { nav .container { flex-direction: column; gap: 1rem; } nav ul { flex-direction: column; gap: 0.5rem; } }
+</style>
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="container">
-    <div class="logo">Greta Schurman</div>
+    <div class="logo">Greta Schurman </div>
     <ul>
       <li><a href="#home">Inicio</a></li>
       <li><a href="#about">Sobre mí</a></li>
@@ -82,7 +86,7 @@ footer a { color: #ff6f61; margin: 0 0.5rem; }
   <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400" alt="Foto personal">
   <div class="info">
     <h2>Sobre mí</h2>
-    <p>Soy Greta Schurman , apasionada por la gastronomía y la cultura culinaria de la península ibérica. Me especializo en recetas tradicionales y fotografía gastronómica.</p>
+    <p>Soy Greta Schurman, apasionada por la gastronomía y la cultura culinaria de la península ibérica. Me especializo en recetas tradicionales y fotografía gastronómica.</p>
     <ul>
       <li>Fotografía de alimentos</li>
       <li>Desarrollo web</li>
@@ -141,13 +145,32 @@ footer a { color: #ff6f61; margin: 0 0.5rem; }
 </section>
 
 <footer>
-  <p>&copy; 2025 Juan Pérez | <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+  <p>&copy; 2025 Greta Schurman | <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
 </footer>
+
+<button id="back-to-top" onclick="scrollToTop()">↑</button>
 
 <script>
 function enviarFormulario(event){
   event.preventDefault();
   alert('¡Gracias! Tu mensaje ha sido enviado.');
+}
+
+const navbar = document.getElementById('navbar');
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    backToTop.style.display = 'block';
+  } else {
+    navbar.classList.remove('scrolled');
+    backToTop.style.display = 'none';
+  }
+});
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
