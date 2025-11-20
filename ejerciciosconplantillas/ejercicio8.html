@@ -60,6 +60,7 @@
     @media(max-width:480px) { nav .container { flex-direction: column; gap: 1rem; } nav ul { flex-direction: column; gap: 0.5rem; } }
   </style>
 </head>
+
 <body>
 
   <nav id="navbar">
@@ -101,27 +102,24 @@
     <div class="projects">
 
       <div class="project-card">
-        <!-- Imagen pública de croquetas -->
         <img src="imagenes/Fotos17..jpg" alt="Croquetas clásicas españolas">
         <div class="content">
           <h3>Croquetas Tradicionales</h3>
-          <p>Croquetas clásicas doradas con bechamel cremosa y sabor casero. (Dominio público)</p>
+          <p>Croquetas clásicas doradas con bechamel cremosa y sabor casero.</p>
           <a href="#">Ver más</a>
         </div>
       </div>
 
       <div class="project-card">
-        <!-- Imagen de croquetas de jamón (stock) -->
         <img src="imagenes/Fotos16..jpg" alt="Croquetas de jamón">
         <div class="content">
           <h3>Croquetas de Jamón Serrano</h3>
-          <p>Las clásicas croquetas de jamón serrano, uno de los sabores más emblemáticos de la cocina española. :contentReference[oaicite:1]{index=1}</p>
+          <p>Las clásicas croquetas de jamón serrano, uno de los sabores más emblemáticos de España.</p>
           <a href="#">Ver más</a>
         </div>
       </div>
 
       <div class="project-card">
-        <!-- Imagen de croquetas de bacalao (usa imagen general de croquetas de Pexels porque es difícil encontrar gratis muy específicas) -->
         <img src="imagenes/Fotos15..webp" alt="Croquetas de bacalao estilo español">
         <div class="content">
           <h3>Croquetas de Bacalao</h3>
@@ -131,10 +129,10 @@
       </div>
 
       <div class="project-card">
-        <!-- Otra imagen de croquetas genéricas -->
-        <img src="imagenes/Fotos14..avif">
+        <img src="imagenes/Fotos14..avif" alt="Croquetas variadas">
+        <div class="content">
           <h3>Croquetas Variadas</h3>
-          <p>Croquetas con queso o ingredientes vegetales, en la línea de algunas recetas españolas modernas.</p>
+          <p>Croquetas con queso o ingredientes vegetales, en la línea de recetas españolas modernas.</p>
           <a href="#">Ver más</a>
         </div>
       </div>
@@ -166,6 +164,7 @@
 
     const navbar = document.getElementById('navbar');
     const backToTop = document.getElementById('back-to-top');
+
     window.addEventListener('scroll', () => {
       if(window.scrollY > 50) {
         navbar.classList.add('scrolled');
@@ -175,6 +174,7 @@
         backToTop.style.display = 'none';
       }
     });
+
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -182,4 +182,3 @@
 
 </body>
 </html>
-
