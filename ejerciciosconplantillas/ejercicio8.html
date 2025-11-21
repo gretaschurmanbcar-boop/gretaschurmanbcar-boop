@@ -23,6 +23,19 @@
     body { line-height: 1.6; color: #333; position: relative; }
     a { text-decoration: none; color: inherit; }
 
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Croquetas - Greta Schurman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+    body { line-height: 1.6; color: #333; position: relative; }
+    a { text-decoration: none; color: inherit; }
+
 ```
 nav { background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; left: 0; z-index: 100; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: background 0.3s; }
 nav.scrolled { background: rgba(255, 111, 97, 0.95); }
@@ -57,33 +70,13 @@ section#portfolio h2, section#video h2, section#history h2 { text-align: center;
 .project-card .content a { display: inline-block; background: #ff6f61; color: #fff; padding: 0.5rem 1rem; border-radius: 5px; transition: 0.3s; }
 .project-card .content a:hover { background: #e65b50; }
 
-/* VIDEO */
 #video iframe { width: 100%; max-width: 800px; height: 450px; display: block; margin: 0 auto; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 
-/* HISTORIA CON ANIMACIONES */
 #history { background: linear-gradient(to right, #fff2e6, #ffe6cc); }
 #history .history-container { max-width: 900px; margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-.history-card {
-  background: #fff;
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  opacity: 0;
-  transform: translateY(50px);
-}
-.history-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.history-card h3 {
-  color: #ff6f61;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+.history-card { background: #fff; border-radius: 15px; padding: 2rem; box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: transform 0.6s ease, opacity 0.6s ease; opacity: 0; transform: translateY(50px); }
+.history-card.visible { opacity: 1; transform: translateY(0); }
+.history-card h3 { color: #ff6f61; margin-bottom: 1rem; font-size: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
 .history-card h3::before { content: "🍴"; font-size: 1.5rem; }
 .history-card p, .history-card ul { color: #333; line-height: 1.6; }
 .history-card ul { list-style: disc inside; }
@@ -107,6 +100,142 @@ footer a { color: #ff6f61; margin: 0 0.5rem; }
   #history .history-container { grid-template-columns: 1fr; }
 }
 ```
+
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">Greta Schurman</div>
+      <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#portfolio">Portafolio</a></li>
+        <li><a href="#history">Historia</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div>
+      <h1>Las Croquetas de la Península Ibérica</h1>
+      <p>Descubre los sabores y recetas tradicionales de España</p>
+      <a href="#portfolio">Ver Portafolio</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <img src="https://images.pexels.com/photos/27609406/pexels-photo-27609406.jpeg" alt="Foto personal">
+    <div class="info">
+      <h2>Sobre mí</h2>
+      <p>Soy Greta Schurman, apasionada por la gastronomía y la cultura culinaria española. Me especializo en recetas tradicionales y fotografía gastronómica.</p>
+      <ul>
+        <li>Fotografía de alimentos</li>
+        <li>Desarrollo web</li>
+        <li>Diseño gráfico</li>
+        <li>Redacción de recetas</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portafolio de Croquetas Españolas</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="imagenes/Fotos17..jpg" alt="Croquetas clásicas españolas">
+        <div class="content">
+          <h3>Croquetas Tradicionales</h3>
+          <p>Croquetas clásicas doradas con bechamel cremosa y sabor casero.</p>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="imagenes/Fotos16..jpg" alt="Croquetas de jamón">
+        <div class="content">
+          <h3>Croquetas de Jamón Serrano</h3>
+          <p>Las clásicas croquetas de jamón serrano, uno de los sabores más emblemáticos de España.</p>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="imagenes/Fotos15..webp" alt="Croquetas de bacalao estilo español">
+        <div class="content">
+          <h3>Croquetas de Bacalao</h3>
+          <p>Croquetas inspiradas en la típica croqueta española de bacalao.</p>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="imagenes/Fotos14..avif" alt="Croquetas variadas">
+        <div class="content">
+          <h3>Croquetas Variadas</h3>
+          <p>Croquetas con queso o ingredientes vegetales, en la línea de recetas españolas modernas.</p>
+          <a href="#">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="history">
+    <h2>Historia de las Croquetas</h2>
+    <div class="history-container">
+      <div class="history-card">
+        <h3>¿De dónde vienen?</h3>
+        <p>Las croquetas tienen su origen en Francia, pero se popularizaron en España, donde cada región desarrolló sus propias versiones, especialmente las de jamón, bacalao y pollo.</p>
+      </div>
+      <div class="history-card">
+        <h3>¿Por qué son tan populares?</h3>
+        <p>Son fáciles de comer, deliciosas, versátiles y se pueden preparar con diferentes ingredientes, lo que las hace perfectas tanto como aperitivo como plato principal.</p>
+      </div>
+      <div class="history-card">
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>El nombre "croqueta" viene del francés "croquer", que significa "crujir".</li>
+          <li>Se cree que la primera croqueta española apareció en el siglo XIX.</li>
+          <li>Existen versiones dulces y saladas en distintos países.</li>
+          <li>Tradicionalmente se sirven en bares y celebraciones familiares.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <h2>Cómo preparar una croqueta perfecta</h2>
+    <iframe src="https://www.youtube.com/embed/5yF1U3E7H3A" 
+            title="Cómo preparar una croqueta perfecta" 
+            allowfullscreen>
+    </iframe>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <form class="contact-form" onsubmit="enviarFormulario(event)">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea placeholder="Mensaje" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Greta Schurman | <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+  </footer>
+
+<button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    function enviarFormulario(event){
+      event.preventDefault();
+      alert('¡Gracias! Tu mensaje ha sido enviado.');
+    }
+
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('back-to-top');
+
+    window.a
 
   </style>
 </head>
