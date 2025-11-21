@@ -164,53 +164,6 @@
   </form>
   <div class="reviews-list"></div>
 
-    const reviewsList = document.querySelector('.reviews-list');
-
-function cargarReseñas() {
-  const reseñasGuardadas = JSON.parse(localStorage.getItem('reseñas') || '[]');
-  reviewsList.innerHTML = '';
-  reseñasGuardadas.forEach(r => {
-    const div = document.createElement('div');
-    div.classList.add('review-item');
-    div.innerHTML = `<div class="stars-display">${'★'.repeat(r.rating) + '☆'.repeat(5 - r.rating)}</div>
-                     <strong>${r.name}</strong>
-                     <p>${r.comment}</p>
-                     ${r.img || ''}`;
-    reviewsList.prepend(div);
-  });
-}
-
-function enviarReseña(event) {
-  event.preventDefault();
-  const form = event.target;
-  const name = form.querySelector('input[type="text"]').value;
-  const comment = form.querySelector('textarea').value;
-  const rating = parseInt(form.querySelector('input[name="rating"]:checked')?.value || 0);
-  const fileInput = form.querySelector('input[type="file"]');
-  let imgTag = '';
-
-  function guardarReseña() {
-    const reseñasGuardadas = JSON.parse(localStorage.getItem('reseñas') || '[]');
-    reseñasGuardadas.push({name, comment, rating, img: imgTag});
-    localStorage.setItem('reseñas', JSON.stringify(reseñasGuardadas));
-    cargarReseñas();
-    form.reset();
-  }
-
-  if (fileInput.files && fileInput.files[0]) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      imgTag = `<img src="${e.target.result}" alt="Foto de ${name}">`;
-      guardarReseña();
-    };
-    reader.readAsDataURL(fileInput.files[0]);
-  } else {
-    guardarReseña();
-  }
-}
-
-cargarReseñas();
-
 </section>
 
   <!-- CONTACTO -->
